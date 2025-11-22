@@ -41,5 +41,6 @@
     "lib/**/*.js",
     "index.js",
     "index.d.ts"
-  ]
+  ],
+  "exports": "./index.js"
 }
