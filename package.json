@@ -42,5 +42,16 @@
     "index.js",
     "index.d.ts"
   ],
-  "exports": "./index.js"
+  "exports": {
+    ".": {
+      "node": {
+        "types": "./index.d.ts",      
+        "default": "./index.js"
+      },
+      "default": {
+        "types": "./index.d.ts",
+        "default": "./index.js"
+      }
+    }
+  }  
 }
