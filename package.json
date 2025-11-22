@@ -8,6 +8,7 @@
     "url": "https://github.com/kenspirit/joi-to-json.git"
   },
   "scripts": {
+    "buildmjs": "cjstoesm index.js dist/esm && rollup dist/esm/index.js --file index.mjs --format es",
     "lint": "./node_modules/.bin/eslint .",
     "test": "jest"
   },
@@ -30,28 +31,25 @@
     "@jest/transform": "^30.0.5",
     "ajv": "^8.17.1",
     "ajv-draft-04": "^1.0.0",
+    "cjstoesm": "^3.0.0",
     "eslint": "^9.33.0",
     "jest": "^30.0.5",
     "joi": "18.0.0",
+    "rollup": "^4.53.3",
     "typescript": "^5.9.2"
   },
   "types": "index.d.ts",
   "files": [
     "docs/**/*",
     "lib/**/*.js",
+    "dist/**/*.js",
     "index.js",
+    "index.mjs",
     "index.d.ts"
   ],
   "exports": {
-    ".": {
-      "node": {
-        "types": "./index.d.ts",      
-        "default": "./index.js"
-      },
-      "default": {
-        "types": "./index.d.ts",
-        "default": "./index.js"
-      }
-    }
-  }  
+    "require": "./index.js",
+    "import": "./index.mjs",
+    "types": "./index.d.ts"
+  }
 }
